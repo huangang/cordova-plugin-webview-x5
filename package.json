@@ -1,0 +1,37 @@
+{
+  "name": "@youtuosoft/cordova-plugin-webview-x5",
+  "version": "0.2.6",
+  "description": "Changes the default WebView to x5",
+  "cordova": {
+    "id": "cordova-plugin-webview-x5",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/youtuosoft/cordova-plugin-webview-x5.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "webview",
+    "x5"
+  ],
+  "author": "haohetao@gmail.com",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/youtuosoft/cordova-plugin-webview-x5/issues"
+  },
+  "homepage": "https://github.com/youtuosoft/cordova-plugin-webview-x5",
+  "engines": [
+    {
+      "name": "cordova-android",
+      "version": ">=4"
+    },
+    {
+      "name": "cordova-plugman",
+      "version": ">=5.2.0"
+    }
+  ]
+}

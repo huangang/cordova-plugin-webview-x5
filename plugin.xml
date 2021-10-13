@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="@youtuosoft/cordova-plugin-webview-x5"
+        version="0.2.5">
+
+    <name>TBS WebView</name>
+    <description>use x5 for cordova to get a better webview browsing experience</description>
+    <license>Apache 2.0</license>
+    <keywords>tbs, webview</keywords>
+
+    <engines>
+        <engine name="cordova-android" version=">=4"/>
+        <engine name="cordova-plugman" version=">=5.2.0"/><!-- needed for gradleReference support -->
+    </engines>
+
+    <!-- android -->
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <preference name="webView" value="org.apache.cordova.x5engine.X5WebViewEngine"/>
+            <preference name="appUserAgent" value="x5webview"/>
+            <preference name="android-minSdkVersion" value="15" />
+	        <allow-navigation href="*" />
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+        </config-file>
+
+        <source-file src="platforms/android/src/org/apache/cordova/x5engine/X5CookieManager.java" target-dir="src/org/apache/cordova/x5engine"/>
+        <source-file src="platforms/android/src/org/apache/cordova/x5engine/X5CordovaClientCertRequest.java" target-dir="src/org/apache/cordova/x5engine"/>
+        <source-file src="platforms/android/src/org/apache/cordova/x5engine/X5CordovaHttpAuthHandler.java" target-dir="src/org/apache/cordova/x5engine"/>
+        <source-file src="platforms/android/src/org/apache/cordova/x5engine/X5ExposedJsApi.java" target-dir="src/org/apache/cordova/x5engine"/>
+        <source-file src="platforms/android/src/org/apache/cordova/x5engine/X5WebChromeClient.java" target-dir="src/org/apache/cordova/x5engine"/>
+        <source-file src="platforms/android/src/org/apache/cordova/x5engine/X5WebView.java" target-dir="src/org/apache/cordova/x5engine"/>
+        <source-file src="platforms/android/src/org/apache/cordova/x5engine/X5WebViewClient.java" target-dir="src/org/apache/cordova/x5engine"/>
+        <source-file src="platforms/android/src/org/apache/cordova/x5engine/X5WebViewEngine.java" target-dir="src/org/apache/cordova/x5engine"/>
+
+        <source-file src="platforms/android/src/com/liuxiaoy/cordova/x5/MainApplication.java" target-dir="src/com/liuxiaoy/cordova/x5"/>
+
+        <framework src="platforms/android/x5.gradle" custom="true" type="gradleReference"/>
+
+        <hook type="after_plugin_install" src="scripts/afterPluginInstall.js" />
+        <hook type="before_plugin_rm" src="scripts/beforePluginRemove.js" />
+
+        <hook type="after_plugin_install" src="scripts/install.js" />
+        <hook type="after_platform_add" src="scripts/install.js" />
+        <hook type="before_plugin_uninstall" src="scripts/uninstall.js" />
+
+        <info>
+            If X5 version has upgraded,you can update x5.gradle by yourself.
+            To contact me for any problems about this cordova-plugin-webview-x5!
+            https://github.com/youtuosoft/cordova-plugin-webview-x5/issues
+        </info>
+    </platform>
+</plugin>
