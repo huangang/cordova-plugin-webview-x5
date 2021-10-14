@@ -1,6 +1,6 @@
 {
   "name": "@huangang/cordova-plugin-webview-x5",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Changes the default WebView to x5",
   "cordova": {
     "id": "cordova-plugin-webview-x5",
