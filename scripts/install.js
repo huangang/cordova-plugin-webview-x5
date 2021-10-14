@@ -9,7 +9,7 @@ module.exports = function (context) {
   const packageId = etree.getroot().attrib.id || etree.getroot().attrib['android-packageName']
   console.log('packageId', packageId)
 
-  let mainContent = fs.readFileSync(path.join(context.opts.projectRoot, 'plugins/@youtuosoft/cordova-plugin-webview-x5/platforms/android/template/MainActivity.java'), 'utf8')
+  let mainContent = fs.readFileSync(path.join(context.opts.projectRoot, 'plugins/@huangang/cordova-plugin-webview-x5/platforms/android/template/MainActivity.java'), 'utf8')
   mainContent = mainContent.replace('<packageName>', packageId)
   fs.writeFileSync(path.join(
     context.opts.projectRoot,
