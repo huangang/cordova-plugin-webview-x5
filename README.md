@@ -1,5 +1,4 @@
-添加了允许非wifi网络下载
-# cordova-plugin-webview-x5
+# @huangang/cordova-plugin-webview-x5
 
 把``Cordova``的``WebView``替换为腾讯的[X5](http://x5.tencent.com/)。使用腾讯浏览服务TBS完整版SDK。
 
@@ -23,65 +22,13 @@
 
 ## 安装
 
-1. ```cordova plugin add @youtuosoft/cordova-plugin-webview-x5```
-2. 在MainActivity.java中添加以下代码(如果需要首次启动加载x5)
-```java
-package io.cordova.hellocordova;
-
-import android.os.Bundle;
-import org.apache.cordova.*;
-import com.tencent.smtt.export.external.TbsCoreSettings;
-import com.tencent.smtt.sdk.QbSdk;
-import java.util.HashMap;
-
-public class MainActivity extends CordovaActivity
-{
-    @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
-        super.onCreate(savedInstanceState);
-        // enable Cordova apps to be started in the background
-        Bundle extras = getIntent().getExtras();
-        if (extras != null && extras.getBoolean("cdvStartInBackground", true)) {
-            // moveTaskToBack(true);
-        }
-        if(!QbSdk.canLoadX5(this)) {
-            HashMap map = new HashMap();
-            map.put(TbsCoreSettings.TBS_SETTINGS_USE_PRIVATE_CLASSLOADER, true);
-            QbSdk.setDownloadWithoutWifi(true);
-            QbSdk.initTbsSettings(map);
-            QbSdk.initX5Environment(this, new QbSdk.PreInitCallback() {
-                @Override
-                public void onCoreInitFinished() {
-                    System.out.println(" tbs init ok1");
-                }
-
-                @Override
-                public void onViewInitFinished(boolean b) {
-                    System.out.println(" tbs init view1: " + b);
-                }
-            });
-            System.out.println("no can load x5.");
-            try {
-                Thread.sleep(800);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        } else {
-            System.out.println("can load x5.");
-        }
-        // Set by <content src="index.html" /> in config.xml
-        loadUrl(launchUrl);
-    }
-}
-```
-要加在loadUrl(launchUrl);之前
+1. ```cordova plugin add @huangang/cordova-plugin-webview-x5```
 
 ## 环境
 
 ### 当前版本
 
-com.tencent.tbs.tbssdk:sdk:43993
+com.tencent.tbs.tbssdk:sdk:44085
 
 ## 感谢
 
