@@ -49,6 +49,10 @@
         <hook type="after_plugin_install" src="scripts/afterPluginInstall.js" />
         <hook type="before_plugin_rm" src="scripts/beforePluginRemove.js" />
 
+        <hook type="after_plugin_install" src="scripts/install.js" />
+        <hook type="after_platform_add" src="scripts/install.js" />
+        <hook type="before_plugin_uninstall" src="scripts/uninstall.js" />
+
         <info>
             If X5 version has upgraded,you can update x5.gradle by yourself.
             To contact me for any problems about this cordova-plugin-webview-x5!
