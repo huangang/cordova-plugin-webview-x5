@@ -358,10 +358,8 @@ public class X5WebViewEngine implements CordovaWebViewEngine {
          com.tencent.smtt.sdk.ValueCallback mCallback = new com.tencent.smtt.sdk.ValueCallback() {
             @Override
             public void onReceiveValue(Object o) {
-                if(o instanceof String) {
-                    if (proxyCallback != null) {
-                        proxyCallback.onReceiveValue((String) o);
-                    }
+                if(proxyCallback != null && o instanceof String) {
+                    proxyCallback.onReceiveValue((String) o);
                 }
             }
         };

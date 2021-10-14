@@ -38,7 +38,11 @@ class X5ExposedJsApi implements ExposedJsApi {
 
     @JavascriptInterface
     public String exec(int bridgeSecret, String service, String action, String callbackId, String arguments) throws JSONException, IllegalAccessException {
-        return bridge.jsExec(bridgeSecret, service, action, callbackId, arguments);
+        String success = "";
+        try {
+            success = bridge.jsExec(bridgeSecret, service, action, callbackId, arguments);
+        } catch (IllegalAccessException err) {}
+        return success;
     }
 
     @JavascriptInterface
