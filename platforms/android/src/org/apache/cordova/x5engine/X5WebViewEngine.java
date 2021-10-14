@@ -359,7 +359,9 @@ public class X5WebViewEngine implements CordovaWebViewEngine {
             @Override
             public void onReceiveValue(Object o) {
                 if(o instanceof String) {
-                    proxyCallback.onReceiveValue((String) o);
+                    if (proxyCallback != null) {
+                        proxyCallback.onReceiveValue((String) o);
+                    }
                 }
             }
         };
