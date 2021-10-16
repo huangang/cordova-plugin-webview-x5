@@ -31,8 +31,8 @@ module.exports = function (context) {
             }
         }
         var filename = 'MainApplication.java';
-        var AppFilePath = path.join(projectRoot, 'platforms/android/app/src/main/java/com/liuxiaoy/cordova/x5/', filename);
-        var appClass = 'com.liuxiaoy.cordova.x5.MainApplication';
+        var AppFilePath = path.join(projectRoot, 'platforms/android/app/src/main/java/com/huangang/cordova/x5/', filename);
+        var appClass = 'com.huangang.cordova.x5.MainApplication';
         if (!finalApplicationName || (finalApplicationName !== appClass)) {
             // TODO 目前只能恢复直接继承的
             return;

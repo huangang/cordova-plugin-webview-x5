@@ -1,4 +1,4 @@
-package com.liuxiaoy.cordova.x5;
+package com.huangang.cordova.x5;
 
 import com.tencent.smtt.export.external.TbsCoreSettings;
 import com.tencent.smtt.sdk.QbSdk;

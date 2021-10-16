@@ -30,9 +30,9 @@ module.exports = function (context) {
             }
         }
         var filename = 'MainApplication.java';
-        var pluginAppFilePath = path.join(pluginDir, 'platforms/android/src/com/liuxiaoy/cordova/x5/', filename);
-        var AppFilePath = path.join(projectRoot, 'platforms/android/app/src/main/java/com/liuxiaoy/cordova/x5/', filename);
-        var appClass = 'com.liuxiaoy.cordova.x5.MainApplication';
+        var pluginAppFilePath = path.join(pluginDir, 'platforms/android/src/com/huangang/cordova/x5/', filename);
+        var AppFilePath = path.join(projectRoot, 'platforms/android/app/src/main/java/com/huangang/cordova/x5/', filename);
+        var appClass = 'com.huangang.cordova.x5.MainApplication';
         if (originalApplicationName === appClass) {
             return;
         }
