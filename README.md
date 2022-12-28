@@ -15,7 +15,7 @@
 
 ### 当前版本
 
-com.tencent.tbs.tbssdk:sdk:44085
+com.tencent.tbs:tbssdk:44226
 
 ## 感谢
 
